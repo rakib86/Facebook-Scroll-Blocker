@@ -1,0 +1,21 @@
+{
+  "name": "Facebook Scroll Blocker",
+  "version": "1.0",
+  "description": "Blocks scrolling on Facebook",
+  "manifest_version": 3,
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.facebook.com/*"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ]
+}
